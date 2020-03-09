@@ -4,12 +4,12 @@ export default ({ url = 'https://staging.myon.com/', env = {} }) => {
     const { INCOMING_HOOK_BODY } = env;
     let str = decodeURI(INCOMING_HOOK_BODY);
     str = decodeURI(str);
-    console.log(str);
+    console.log('decode',str);
     let payload = 'unknown';
     try {
         JSON.parse(str);
     } catch (e) {}
-    console.log(payload);
+    console.log('payload',payload);
     return (
         <div>
             version {url}
