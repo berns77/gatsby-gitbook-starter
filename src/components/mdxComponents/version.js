@@ -1,19 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
-export default ({ url = 'https://staging.myon.com/' }) => {
-    const [version, setVersion] = useState('unknown');
+export default ({ url = 'https://staging.myon.com/', version = 2 }) => {
+    const stage = process.env.INCOMING_HOOK_BODY || 'unknown';
 
-    useEffect(() => {
-        const fetchData = async () => {
-            const result = await fetch(url);
-            setVersion(result.data);
-        };
-        fetchData();
-    }, []);
+    console.log(stage);
 
     return (
         <div>
             version {url} {version}
+            <pre>{JSON.stringify(stage)}</pre>
         </div>
     );
 };
