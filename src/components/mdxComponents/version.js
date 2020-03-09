@@ -1,6 +1,7 @@
 import React from 'react';
 
-export default ({ url = 'https://staging.myon.com/', env }) => {
+export default ({ url = 'https://staging.myon.com/', env={} }) => {
+    console.log(env)
     return (
         <div>
             version {url}
