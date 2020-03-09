@@ -7,4 +7,4 @@ pat=' \| (v[0-9.]+ \([^)]+\)) \| '
 staging="${BASH_REMATCH[1]}"
 echo $staging
 
-curl -X POST -d '{staging:"$staging"}' https://api.netlify.com/build_hooks/5e66937524627bd09fb3305a
+curl -X POST -d "staging=$staging" https://api.netlify.com/build_hooks/5e66937524627bd09fb3305a
